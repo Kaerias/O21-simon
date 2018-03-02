@@ -6,7 +6,7 @@ Tutoriel :
 
 premièrement voud devrez créer votre plateaux de jeux de VOTRE Simon
 	il sera constituer de 4 GameObjet de couleurs reposant sur socle.
-	Rajouter sur GameObjet servant de bouton de couleur le composent : "Light", désactive-le mais activer sa case "Draw Halo"  (choisisez à chacun d'eux une belle couleur, important)
+	Rajouter sur GameObjet servant de bouton de couleur le composent : "Light", désactive-le mais activer sa case "Draw Halo".
 je compte sur votre imagination pour la construction.
 (pour créer des objet 3D sur Unity, faites clic droit sur votre "Hierarchy" et "objet3D"
 
@@ -17,14 +17,14 @@ Après avoir fait votre plateaux de jeu, commençons la partie intéressante
 	Vous devez réparer les différents script (désolé, le stagiaire les a cassé) pour pouvoir réaliser votre but ultime, jouer a votre jeu.
 	Pour cela vous devrez utiliser les différentes aide ci-dessous.
 
-Vous touchez au but maintenant o/
+Vous touchez au but maintenant,
 	dernière étape : remplir les cases.
 	mettez les quatre "Script" : EndGame, LightController, Player et Timer sur un GameObject Vide !! et appellais le "GameBoard".
 	le Script Button sur tout vos buttons de couleurs.
 	maintenant vous pouvez remarquer que dans votre "Hierarchy" certaines cases dans vos objets sont vident et attendent d'être remplient par différents "GameObject" ou "Script"
 	Remplisez-les.
 
-Normalement si tout ce passe bien votre jeu devrais fonctionner maintenant. o/
+Normalement si tout ce passe bien votre jeu devrais fonctionner maintenant.
 
 vous devez savoir diverse choses avant de commencer
 
