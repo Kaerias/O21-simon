@@ -30,29 +30,26 @@ public class EndGame : MonoBehaviour {
 		nbr = 0;
 		foreach (int i in GetComponent<LightController>().GetListButton())
 		{
-			//réaliser la condtion suivante : si Ia[nbr] est différent de -1
+			if (Ia[nbr] != -1)
 			{
-				//réaliser la condtion suivante : si "i" est différent de Ia[nbr];
-					//mettre la Variable "WinGame" à false;
-				//fermer la condition avant le "nbr++";
+				if (i != Ia[nbr])
+					WinGame = false;
 				nbr++;
 			}
 		}
 		if (WinGame == true && Ia[0] != -1)
-		{
-			//changer le text de la variable "text". mettre "You Win" si "WinGame == true" sinon "You Lose"
-			//mettre text ici;
-		}
-		else {
-			//et la ici aussi;
-		}
+			text.text = "You Win";
+		else
+			text.text = "You Lose";
 		Board.SetActive(false);
 	}
 
 	public void Retry()
 	{
-		//réalisez les appel fonctions : "SetIsPlayerTurn", "SetIsChoose", "ListClear" et "SetTurn", en leurs donnant les bon arguments grâçe un component, indice : le component et "LightController" 
-
+		GetComponent<LightController>().SetIsPlayerTurn(false);
+		GetComponent<LightController>().SetIsChoose(false);
+		GetComponent<LightController>().SetTurn();
+		GetComponent<LightController>().ListClear();
 		Board.SetActive(true);
 	}
 }

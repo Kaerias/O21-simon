@@ -287,6 +287,7 @@
   <ItemGroup>
     <Compile Include="Assets\Script\Button.cs" />
     <Compile Include="Assets\Script\EndGame.cs" />
+    <Compile Include="Assets\Script\HELP.cs" />
     <Compile Include="Assets\Script\LightController.cs" />
     <Compile Include="Assets\Script\Player.cs" />
     <Compile Include="Assets\Script\Timer.cs" />

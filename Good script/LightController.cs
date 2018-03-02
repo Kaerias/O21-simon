@@ -17,13 +17,12 @@ public class LightController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		//initialisez les variables qu'il ne le sont pas (mettre les valeur par défaut)
-		_isPlayerTurn = ;
-		_isOn = ;
+		_isPlayerTurn = false;
+		_isOn = false;
 		timerMax = 2;
 		turn = 0;
 		ligthTimer = 0;
-		_isChoosed = ;
+		_isChoosed = false;
 		length = LightButton.Length;
 		ListButton = new ArrayList();
 	}
@@ -32,14 +31,11 @@ public class LightController : MonoBehaviour {
 	void Update () {
 		if (!_isChoosed)
 		{
-			//réalisez un random entre 1 et 4, indice : Random. ;
-			turnMax = ;
-			//affichez le résultat de ce random grâce à la fonction, indice : "print("texte" + ma variable)";
-			print();
+			turnMax = Random.Range(4, 6);
+			print("turnMax = " + turnMax);
 			_isChoosed = true;
 		}
-		//appellez la fonction "IaTurn";
-
+		IaTurn();
 	}
 
 	private void IaTurn()
@@ -59,21 +55,18 @@ public class LightController : MonoBehaviour {
 
 	public void TurnOnLight(int nbr)
 	{
-		// réalisez un "for" avec la condition : "tant que i inférieure à length
-		for ()
+		for (int i = 0; i < length && !_isOn; i++)
 		{
-			if (LightButton[/*remplacer ce commentaire ma votre variable créé dans le "for"*/].GetComponent<Light>().isActiveAndEnabled)
+			if (LightButton[i].GetComponent<Light>().isActiveAndEnabled)
 				_isOn = true;
 		}
-		//réalisez un "if" avec pour condition : "si _isOn est égale à "false" et si la variable ligthTimer est égale à la variable timerMax"
-		if ()
+		if (!_isOn && ligthTimer == timerMax)
 		{
 			if (turn == turnMax)
 				_isPlayerTurn = true;
 			else
 			{
-				//complétez l'instruction ci-dessous, indice : tu dois activer le composant si dessous"
-				LightButton[nbr].GetComponent<Light>(). ;
+				LightButton[nbr].GetComponent<Light>().enabled = true;
 				ListButton.Add(nbr);
 				turn++;
 			}
@@ -101,7 +94,10 @@ public class LightController : MonoBehaviour {
 		_isOn = false;
 	}
 
-	//Réaliser les "Getter" et "Setter" des variables "_isPlayerTurn" et "SetIsChoose" /!\ ne pas oublier de mettre "public" devant la fonction" 
+	public bool GetIsPlayerTurn()
+	{
+		return _isPlayerTurn;
+	}
 
 	public void SetIsPlayerTurn(bool b)
 	{
@@ -116,6 +112,11 @@ public class LightController : MonoBehaviour {
 	public GameObject[] GetLightObject()
 	{
 		return LightButton;
+	}
+
+	public void SetIsChoose(bool b)
+	{
+		_isChoosed = false;
 	}
 
 	public void SetTurn()
