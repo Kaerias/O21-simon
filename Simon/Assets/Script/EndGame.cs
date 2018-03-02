@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EndGame : MonoBehaviour {
 
 	int[] Ia;
 	bool WinGame;
+	public GameObject Board;
+	public Text text;
 
 	private void Start()
 	{
@@ -35,12 +38,18 @@ public class EndGame : MonoBehaviour {
 			}
 		}
 		if (WinGame == true && Ia[0] != -1)
-			print("You Win");
+			text.text = "You Win";
 		else
-			print("You Lose");
+			text.text = "You Lose";
+		Board.SetActive(false);
+	}
+
+	public void Retry()
+	{
 		GetComponent<LightController>().SetIsPlayerTurn(false);
 		GetComponent<LightController>().SetIsChoose(false);
 		GetComponent<LightController>().SetTurn();
 		GetComponent<LightController>().ListClear();
+		Board.SetActive(true);
 	}
 }
